@@ -11,6 +11,7 @@ import {
   MobileOutlined,
   FilePdfOutlined,
   SettingOutlined,
+  BranchesOutlined
 } from "@ant-design/icons";
 import { APP_PREFIX_PATH, AUTH_PREFIX_PATH } from "configs/AppConfig";
 
@@ -27,6 +28,14 @@ const dashBoardNavTree = [
         path: `${APP_PREFIX_PATH}/main/dashboards`,
         title: "Дашборд",
         icon: DashboardOutlined,
+        breadcrumb: false,
+        submenu: [],
+      },
+      {
+        key: 'layoutScheme',
+        path: `${APP_PREFIX_PATH}/main/layoutScheme`,
+        title: 'Схема размещения',
+        icon: BranchesOutlined,
         breadcrumb: false,
         submenu: [],
       },

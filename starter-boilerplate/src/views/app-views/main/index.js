@@ -15,11 +15,13 @@ import OfflineAddresses from "./OfflineAddresses";
 import OfflineGeozones from "./OfflineGeozones";
 import Employees from "./Employees";
 import Spam from "./Spam";
+import LayoutScheme from "./LayoutScheme";
 
 const MainViews = () => {
   return (
     <Switch>
       <Route path="/app/main/dashboards" component={Dashboard} />
+      <Route path='/app/main/layoutScheme' component={LayoutScheme} />
       <Route path="/app/main/catalog/products" component={CatalogProducts} />
       <Route path="/app/main/catalog/categories" component={CatalogCategories} />
       <Route path="/app/main/catalog/collections" component={CatalogCollections} />
