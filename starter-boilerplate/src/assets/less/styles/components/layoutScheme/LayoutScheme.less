@@ -1,34 +1,53 @@
-@padding: 20px;
-@border-radius: 5px;
-@object-background: white;
-@object-border: 1px solid #ddd;
-@board-background: #e8ecef;
-@board-border: 2px dashed #aaa;
-@primary-color: #1890ff;
-@hover-color: #40a9ff;
-
 .layout-scheme-container {
-  padding: @padding;
+  padding: 20px;
+}
+
+.controls {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.controls button,
+.controls .upload-btn {
+  padding: 8px 16px;
+  background-color: #1890ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.controls button:hover,
+.controls .upload-btn:hover {
+  background-color: #40a9ff;
+}
+
+.upload-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.upload-btn input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
 }
 
 .layout-content {
   display: flex;
-  gap: @padding;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
+  gap: 20px;
 }
 
 .objects-panel {
   width: 200px;
   background-color: #f4f4f4;
   padding: 10px;
-  border-radius: @border-radius;
-
-  @media (max-width: 768px) {
-    width: 100%;
-  }
+  border-radius: 5px;
 }
 
 .object-item {
@@ -36,15 +55,15 @@
   align-items: center;
   gap: 10px;
   padding: 10px;
-  background-color: @object-background;
+  background-color: white;
   margin-bottom: 10px;
-  border: @object-border;
-  border-radius: @border-radius;
+  border: 1px solid #ddd;
+  border-radius: 5px;
   cursor: grab;
+}
 
-  &:hover {
-    background-color: #f0f0f0;
-  }
+.object-item:hover {
+  background-color: #f0f0f0;
 }
 
 .object-image {
@@ -55,57 +74,17 @@
 .board {
   flex: 1;
   height: 500px;
-  background-color: @board-background;
-  border: @board-border;
+  background-color: #e8ecef;
+  border: 2px dashed #aaa;
   position: relative;
-
-  @media (max-width: 768px) {
-    height: 300px;
-  }
 }
 
 .placed-object {
   position: absolute;
   cursor: move;
-
-  .object-image {
-    width: 50px;
-    height: 50px;
-  }
 }
 
-.controls {
-  margin-bottom: @padding;
-  display: flex;
-  gap: 10px;
-
-  button,
-  .upload-btn {
-    padding: 8px 16px;
-    background-color: @primary-color;
-    color: white;
-    border: none;
-    border-radius: @border-radius;
-    cursor: pointer;
-    transition: background-color 0.3s;
-
-    &:hover {
-      background-color: @hover-color;
-    }
-  }
-
-  .upload-btn {
-    position: relative;
-    overflow: hidden;
-
-    input {
-      position: absolute;
-      top: 0;
-      left: 0;
-      opacity: 0;
-      width: 100%;
-      height: 100%;
-      cursor: pointer;
-    }
-  }
+.placed-object .object-image {
+  width: 50px;
+  height: 50px;
 }
