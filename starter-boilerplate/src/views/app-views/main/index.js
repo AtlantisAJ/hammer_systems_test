@@ -21,7 +21,7 @@ const MainViews = () => {
   return (
     <Switch>
       <Route path="/app/main/dashboards" component={Dashboard} />
-      <Route path='/app/main/layoutScheme' component={LayoutScheme} />
+      <Route path='/app/main/LayoutScheme' component={LayoutScheme} />
       <Route path="/app/main/catalog/products" component={CatalogProducts} />
       <Route path="/app/main/catalog/categories" component={CatalogCategories} />
       <Route path="/app/main/catalog/collections" component={CatalogCollections} />

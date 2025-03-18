@@ -1,0 +1,111 @@
+@padding: 20px;
+@border-radius: 5px;
+@object-background: white;
+@object-border: 1px solid #ddd;
+@board-background: #e8ecef;
+@board-border: 2px dashed #aaa;
+@primary-color: #1890ff;
+@hover-color: #40a9ff;
+
+.layout-scheme-container {
+  padding: @padding;
+}
+
+.layout-content {
+  display: flex;
+  gap: @padding;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.objects-panel {
+  width: 200px;
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-radius: @border-radius;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.object-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: @object-background;
+  margin-bottom: 10px;
+  border: @object-border;
+  border-radius: @border-radius;
+  cursor: grab;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+}
+
+.object-image {
+  width: 40px;
+  height: 40px;
+}
+
+.board {
+  flex: 1;
+  height: 500px;
+  background-color: @board-background;
+  border: @board-border;
+  position: relative;
+
+  @media (max-width: 768px) {
+    height: 300px;
+  }
+}
+
+.placed-object {
+  position: absolute;
+  cursor: move;
+
+  .object-image {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.controls {
+  margin-bottom: @padding;
+  display: flex;
+  gap: 10px;
+
+  button,
+  .upload-btn {
+    padding: 8px 16px;
+    background-color: @primary-color;
+    color: white;
+    border: none;
+    border-radius: @border-radius;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: @hover-color;
+    }
+  }
+
+  .upload-btn {
+    position: relative;
+    overflow: hidden;
+
+    input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+    }
+  }
+}
