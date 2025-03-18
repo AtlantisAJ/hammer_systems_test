@@ -3,10 +3,11 @@ import { Form, Avatar, Button, Input, DatePicker, Row, Col, message, Upload, Spi
 import { UserOutlined } from '@ant-design/icons';
 import { useParams, useHistory } from 'react-router-dom';
 import { ROW_GUTTER } from 'constants/ThemeConstant';
+import {API_USER_URL} from "../../../configs/AppConfig";
 import Flex from 'components/shared-components/Flex';
 
 const EditProfile = () => {
-  const { id } = useParams(); // Получаем ID пользователя из URL
+  const { id } = useParams();
   const history = useHistory();
   const [user, setUser] = useState({
     name: '',
@@ -17,13 +18,13 @@ const EditProfile = () => {
     address: '',
     city: '',
     postcode: '',
-    avatarUrl: '/img/avatars/thumb-6.jpg', // Заглушка
+    avatarUrl: '/img/avatars/thumb-6.jpg',
   });
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setLoading(true);
-    fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
+    fetch(`${API_USER_URL}/users/${id}`)
       .then(response => {
         if (!response.ok) {
           throw new Error('Ошибка загрузки пользователя');
@@ -31,7 +32,7 @@ const EditProfile = () => {
         return response.json();
       })
       .then(data => {
-        console.log('Полученные данные:', data); // Отладка
+        console.log('Полученные данные:', data);
         setUser({
           name: data.name,
           email: data.email,
