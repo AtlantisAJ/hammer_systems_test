@@ -2,7 +2,7 @@
   "name": "emilus",
   "version": "2.0.1",
   "private": true,
-  "homepage": "https://atlantisaj.github.io/",
+  "homepage": "/",
   "dependencies": {
     "@babel/core": "^7.26.10",
     "@testing-library/jest-dom": "^5.11.4",
